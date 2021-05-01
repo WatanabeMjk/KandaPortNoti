@@ -11,8 +11,8 @@ def lambda_handler(event, context):
     line_notify_token = os.getenv("LINE_NOTIFY_TOKEN")
     # line notify APIのエンドポイントの設定
     line_notify_api = 'https://notify-api.line.me/api/notify'
-    driver = webdriver.Chrome(
-        'C:/GoogleDrive/Projects/selenium_test/bin/chromedriver.exe')
+    headless_chromium = os.getenv('HEADLESS_CHROMIUM', '')
+    driver = os.getenv('CHROMEDRIVER', '')
     driver.get('https://select-type.com/rsv/?id=NU9l1ADZjFk')
     select_box = Select(driver.find_element_by_name('c_id'))
     select_box.select_by_value('141223')

@@ -1,0 +1,5 @@
+upload/
+app/.mypy_cache/
+download/
+*.zip
+app/.vscode/settings.json
